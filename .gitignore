@@ -1,0 +1,45 @@
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Editors
+.vscode/
+.idea/
+
+# YOLO generated files and model weights
+runs/
+*.pt
+
+# Generated outputs
+outputs/results/
+outputs/temp/
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+# Generated results
+outputs/results/
+
+# Keep the existing simulation screenshot
+!outputs/screenshots/
+!outputs/screenshots/*.png
