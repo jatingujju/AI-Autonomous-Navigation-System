@@ -1,129 +1,97 @@
 # AI-Based Autonomous Navigation System
 
-A Python-based autonomous navigation prototype that simulates a robot navigating a 2D grid environment, plans a path around obstacles using the A* algorithm, and demonstrates camera-based object detection using OpenCV and pretrained YOLO.
+An interactive AI navigation project that demonstrates autonomous path planning, obstacle avoidance, and visual navigation through a grid-based simulation.
 
-## Features
+**Live Demo:** https://ai-autonomous-navigation-system-kykamnkn9gqulibwoctvue.streamlit.app/
 
-- 2D robot navigation simulation using Pygame
-- A* path-planning algorithm
-- Simulated obstacle perception
-- Webcam capture using OpenCV
-- Real-time object detection using pretrained YOLO
-- Four path-planning tests
+**GitHub Repository:** https://github.com/jatingujju/AI-Autonomous-Navigation-System
 
-## Technologies
+## Project Overview
 
-- Python 3.11
+This project explores how an autonomous navigation system can find a path from a starting point to a destination while avoiding obstacles. It combines path-planning algorithms, a simulation environment, and an interactive Streamlit dashboard.
+
+## Key Features
+
+- **A* Path Planning:** Finds a route between the start and goal while avoiding blocked grid cells.
+- **Interactive Navigation:** Move through the planned route one step at a time or complete the navigation automatically.
+- **Obstacle Management:** Explore navigation using obstacles and supported custom map configurations.
+- **Visual Simulation:** View the grid, planned route, obstacles, start point, and destination.
+- **Navigation Controls:** Start, advance, complete, and reset the simulation.
+- **Computer Vision Components:** Separate camera-capture and YOLO-based object-detection modules for experimentation.
+
+## Technology Stack
+
+- Python
+- A* Search Algorithm
 - Pygame
+- Streamlit
+- Plotly
 - NumPy
-- Matplotlib
 - OpenCV
 - Ultralytics YOLO
 
-## Project Structure
+## How It Works
 
-```text
-AI-Autonomous-Navigation-System/
-├── docs/
-├── images/
-│   ├── simulation_environment.png
-│   └── test_results.png
-├── outputs/
-├── simulation/
-│   └── environment.py
-├── src/
-│   ├── camera_capture.py
-│   ├── object_detection.py
-│   ├── path_planning.py
-│   └── perception.py
-├── tests/
-├── main.py
-├── requirements.txt
-└── test_path_planning.py
+1. Define the starting position and destination.
+2. Represent the environment as a grid containing obstacles.
+3. Use A* search to calculate a valid route.
+4. Visualize the route and environment in the dashboard.
+5. Simulate movement and monitor navigation progress.
+6. Reset the simulation to explore another run.
+
+## Run the Streamlit Dashboard Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/jatingujju/AI-Autonomous-Navigation-System.git
+cd AI-Autonomous-Navigation-System
 ```
 
-## Setup
-
-Use Python 3.11 and create a virtual environment.
+Create and activate a virtual environment:
 
 ```bash
 python -m venv .venv
 ```
 
-Activate it on Windows:
+Windows:
 
-```bat
+```bash
 .venv\Scripts\activate
 ```
 
-Install the dependencies:
+Install the dashboard dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run the Project
-
-Launch the main menu:
+Launch the dashboard:
 
 ```bash
-python main.py
+python -m streamlit run streamlit_app.py
 ```
 
-Choose from the menu:
+## Project Scope and Limitations
 
-1. Run the Pygame navigation simulation.
-2. Open the webcam camera feed.
-3. Run YOLO object detection.
-4. Run path-planning tests.
-5. Exit.
-
-You can also run the tests directly:
-
-```bash
-python test_path_planning.py
-```
-
-## Current Test Results
-
-All four path-planning tests passed:
-
-- Path found around obstacles.
-- Start equals goal.
-- Unreachable destination handled correctly.
-- Obstacle at start handled correctly.
-
-The simulation successfully reached its destination in 21 moves during testing.
-
-## Screenshots
-
-### Pygame Navigation Simulation
-
-![Pygame navigation simulation](images/simulation_environment.png)
-
-### Path-Planning Test Results
-
-![Path-planning test results](images/test_results.png)
-
-## Current Limitations
-
-- The simulation uses predefined grid obstacles.
-- The webcam and YOLO object-detection modules operate separately from the navigation planner.
-- Camera detections do not currently update the robot's route.
-- The system is a software prototype; physical robot deployment is not implemented.
+This project demonstrates navigation in a simulated environment. The camera and YOLO detection components are separate from the current A* route planner; detected objects do not automatically update the planned route. The project has not been validated on a physical robot.
 
 ## Future Improvements
 
-- Detect dynamic obstacles and update routes automatically.
-- Integrate camera detections with path planning.
-- Add lane detection and richer simulated environments.
-- Explore ROS 2 and SLAM.
-- Add more navigation tests and performance visualizations.
+- Integrate detected obstacles with real-time path replanning.
+- Add dynamic obstacle movement to the simulation.
+- Compare A* with algorithms such as Dijkstra's and BFS.
+- Add navigation performance metrics and benchmarking.
+- Explore deployment on a physical robot platform.
 
 ## Author
 
 **Jatin Gujarathi**
 
-- GitHub: [@jatingujju](https://github.com/jatingujju)
-- LinkedIn: [Jatin Gujarathi](https://www.linkedin.com/in/jatin-gujarathi-bb16a7221/)
+GitHub: https://github.com/jatingujju
 
+LinkedIn: https://www.linkedin.com/in/jatin-gujarathi-bb16a7221/
+
+---
+
+*Built as a hands-on project exploring AI, path planning, simulation, and computer vision.*
